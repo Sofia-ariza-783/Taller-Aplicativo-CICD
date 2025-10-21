@@ -37,16 +37,18 @@ class RecipeControllerTest {
     testRecipe =
         new Recipe(
             "1",
+            "title_1",
             "Chef John",
             1,
             Arrays.asList("ingredient1", "ingredient2"),
             Arrays.asList("Step 1", "Step 2"));
 
-    testRecipeDto = new RecipeDto("Chef John", "ingredient1, ingredient2", "Step 1; Step 2");
+    testRecipeDto = new RecipeDto("title", "Chef John", "ingredient1, ingredient2", "Step 1; Step 2");
 
     testResponseDto =
         new RecipeResponseDto(
             "1",
+            "title_2",
             "Chef John",
             Arrays.asList("ingredient1", "ingredient2"),
             Arrays.asList("Step 1", "Step 2"),
@@ -183,6 +185,7 @@ class RecipeControllerTest {
     Recipe recipe1 =
         new Recipe(
             "1",
+            "title_2",
             "Chef John",
             1,
             Arrays.asList("ingredient1", "ingredient2"),
@@ -191,6 +194,7 @@ class RecipeControllerTest {
     Recipe recipe2 =
         new Recipe(
             "2",
+            "title_1",
             "Chef Maria",
             2,
             Arrays.asList("ingredient1", "ingredient3"),

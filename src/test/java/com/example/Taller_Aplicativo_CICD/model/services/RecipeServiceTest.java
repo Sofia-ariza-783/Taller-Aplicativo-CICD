@@ -46,12 +46,13 @@ class RecipeServiceTest {
     testRecipe =
         new Recipe(
             "1",
+            "title",
             "Chef John",
             1,
             Arrays.asList("ingredient1", "ingredient2"),
             Arrays.asList("Step 1", "Step 2"));
 
-    testRecipeDto = new RecipeDto("Chef John", "ingredient1, ingredient2", "Step 1; Step 2");
+    testRecipeDto = new RecipeDto("title", "Chef John", "ingredient1, ingredient2", "Step 1; Step 2");
 
     testParticipant = new Participant("1", "Chef John", 1);
     testChef = new Chef("1", "Chef John");
@@ -246,7 +247,7 @@ class RecipeServiceTest {
   void updateRecipe_WhenRecipeNotFound_ShouldThrowException() {
     // Arrange
     when(recipeRepository.findById(anyString())).thenReturn(Optional.empty());
-    RecipeDto updateDto = new RecipeDto("Updated Chef", "new1, new2", "New Step 1; New Step 2");
+    RecipeDto updateDto = new RecipeDto("new_title","Updated Chef", "new1, new2", "New Step 1; New Step 2");
 
     // Act & Assert
     assertThrows(
@@ -265,7 +266,7 @@ class RecipeServiceTest {
   @Test
   void updateRecipe_ShouldUpdateExistingRecipe() {
     // Arrange
-    RecipeDto updateDto = new RecipeDto("Updated Chef", "new1, new2", "New Step 1; New Step 2");
+    RecipeDto updateDto = new RecipeDto("title","Updated Chef", "new1, new2", "New Step 1; New Step 2");
     when(recipeRepository.findById(anyString())).thenReturn(Optional.of(testRecipe));
     when(recipeRepository.save(any(Recipe.class))).thenReturn(testRecipe);
 
