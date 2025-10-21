@@ -28,7 +28,7 @@ jobs:
           cache: 'maven'
 
       - name: Build & Unit Tests
-        run: mvn clean package
+        run: mvn clean package spring-boot:repackage
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
@@ -79,6 +79,9 @@ jobs:
 
       - name: Rename JAR for Azure
         run: mv target/taller2dosw-0.0.1-SNAPSHOT.jar target/app.jar
+
+      - name: Validate JAR manifest
+        run: unzip -p target/app.jar META-INF/MANIFEST.MF
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
