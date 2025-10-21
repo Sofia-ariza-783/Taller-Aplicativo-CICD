@@ -82,6 +82,9 @@ jobs:
       - name: Validate JAR manifest
         run: unzip -p target/app.jar META-INF/MANIFEST.MF
 
+      - name: Inspect JAR Manifest
+        run: unzip -p target/taller2dosw-0.0.1-SNAPSHOT.jar META-INF/MANIFEST.MF
+
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
