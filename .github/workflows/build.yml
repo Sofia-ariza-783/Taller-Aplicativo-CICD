@@ -77,10 +77,12 @@ jobs:
       - name: List JARs
         run: ls -l target
 
+      - name: Rename JAR for Azure
+        run: mv target/taller2dosw-0.0.1-SNAPSHOT.jar target/app.jar
+
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'TallerCICD'
-          slot-name: 'Production'
-          package: 'target/*.jar'
+          package: 'target/app.jar'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
