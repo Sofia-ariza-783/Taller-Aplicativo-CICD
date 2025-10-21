@@ -74,6 +74,9 @@ jobs:
           name: build-artifacts
           path: target
 
+      - name: List JARs
+        run: ls -l target
+
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
