@@ -76,9 +76,6 @@ jobs:
       - name: List JARs
         run: ls -l target
 
-      - name: Rename JAR for Azure
-        run: mv target/taller2dosw-0.0.1-SNAPSHOT.jar target/app.jar
-
       - name: Validate JAR manifest
         run: unzip -p target/app.jar META-INF/MANIFEST.MF
 
