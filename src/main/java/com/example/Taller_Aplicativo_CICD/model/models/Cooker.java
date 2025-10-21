@@ -10,8 +10,7 @@ import org.springframework.data.annotation.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Cooker {
-    @Id
-    private String id;
-    private String fullName;
-    private Role role;
+  @Id private String id;
+  private String fullName;
+  private Role role;
 }

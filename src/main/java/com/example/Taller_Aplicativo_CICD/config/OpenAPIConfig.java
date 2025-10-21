@@ -10,21 +10,19 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class OpenAPIConfig {
 
-    @Bean
-    public OpenAPI customOpenAPI() {
-        return new OpenAPI()
-                .info(new Info()
-                        .title("Taller Aplicativo CICD API")
-                        .version("1.0")
-                        .description("API documentation for Taller Aplicativo CICD application")
-                        .license(new License().name("Apache 2.0").url("http://springdoc.org")));
-    }
+  @Bean
+  public OpenAPI customOpenAPI() {
+    return new OpenAPI()
+        .info(
+            new Info()
+                .title("Taller Aplicativo CICD API")
+                .version("1.0")
+                .description("API documentation for Taller Aplicativo CICD application")
+                .license(new License().name("Apache 2.0").url("http://springdoc.org")));
+  }
 
-    @Bean
-    public GroupedOpenApi publicApi() {
-        return GroupedOpenApi.builder()
-                .group("public-apis")
-                .pathsToMatch("/**")
-                .build();
-    }
+  @Bean
+  public GroupedOpenApi publicApi() {
+    return GroupedOpenApi.builder().group("public-apis").pathsToMatch("/**").build();
+  }
 }
