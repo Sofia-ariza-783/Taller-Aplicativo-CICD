@@ -50,7 +50,8 @@ public class RecipeService {
       num = lastRecipe.getNum() + 1;
     }
 
-    Recipe recipe = new Recipe(id, recipeDto.title(), recipeDto.author(), num, ingredients, instructions);
+    Recipe recipe =
+        new Recipe(id, recipeDto.title(), recipeDto.author(), num, ingredients, instructions);
     try {
       return recipeRepository.save(recipe);
     } catch (Exception e) {

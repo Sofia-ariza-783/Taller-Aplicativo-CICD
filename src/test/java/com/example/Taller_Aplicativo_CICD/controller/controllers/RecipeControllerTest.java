@@ -43,7 +43,8 @@ class RecipeControllerTest {
             Arrays.asList("ingredient1", "ingredient2"),
             Arrays.asList("Step 1", "Step 2"));
 
-    testRecipeDto = new RecipeDto("title", "Chef John", "ingredient1, ingredient2", "Step 1; Step 2");
+    testRecipeDto =
+        new RecipeDto("title", "Chef John", "ingredient1, ingredient2", "Step 1; Step 2");
 
     testResponseDto =
         new RecipeResponseDto(
