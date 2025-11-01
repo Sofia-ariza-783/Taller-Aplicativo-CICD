@@ -153,6 +153,23 @@ La documentación de la API está disponible en formato OpenAPI/Swagger en:
 ## Pruebas con jacoco
 ![img.png](img.png)
 
+## Ejemplos Swagger-ui
+
+![img_1.png](img_1.png)
+
+![img_2.png](img_2.png)
+
+![img_3.png](img_3.png)
+
+![img_4.png](img_4.png)
+
+![img_5.png](img_5.png)
+
+![img_6.png](img_6.png)
+
+ademas de todas las funcionalidades asociadas a cada actor
+![img_7.png](img_7.png)
+
 #### Configuración del Workflow CI/CD
 
 El proyecto utiliza GitHub Actions para la integración y despliegue continuos. El flujo de trabajo se define en `.github/workflows/build.yml` y realiza las siguientes acciones:
